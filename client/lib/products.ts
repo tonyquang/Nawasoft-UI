@@ -199,30 +199,55 @@ export function getProductBySlug(slug: string): Product | undefined {
 
 export const productColorMap: Record<
   Product["color"],
-  { text: string; bg: string; border: string; glow: string }
+  {
+    text: string;
+    bg: string;
+    border: string;
+    glow: string;
+    hoverText: string;
+    hoverBg: string;
+    topBar: string;
+    glowColor: string;
+  }
 > = {
   violet: {
     text: "text-violet-400",
     bg: "bg-violet-500/10",
     border: "border-violet-500/30",
     glow: "shadow-violet-500/20",
+    hoverText: "group-hover:text-violet-400",
+    hoverBg: "group-hover:bg-violet-500/15",
+    topBar: "from-violet-500 to-purple-500",
+    glowColor: "oklch(0.49 0.27 293 / 0.12)",
   },
   cyan: {
     text: "text-cyan-400",
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/30",
     glow: "shadow-cyan-500/20",
+    hoverText: "group-hover:text-cyan-400",
+    hoverBg: "group-hover:bg-cyan-500/15",
+    topBar: "from-cyan-400 to-teal-500",
+    glowColor: "oklch(0.85 0.18 195 / 0.12)",
   },
   blue: {
     text: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/30",
     glow: "shadow-blue-500/20",
+    hoverText: "group-hover:text-blue-400",
+    hoverBg: "group-hover:bg-blue-500/15",
+    topBar: "from-blue-400 to-blue-600",
+    glowColor: "oklch(0.55 0.22 220 / 0.12)",
   },
   indigo: {
     text: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/30",
     glow: "shadow-indigo-500/20",
+    hoverText: "group-hover:text-indigo-400",
+    hoverBg: "group-hover:bg-indigo-500/15",
+    topBar: "from-indigo-400 to-indigo-600",
+    glowColor: "oklch(0.52 0.24 264 / 0.12)",
   },
 };
