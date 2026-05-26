@@ -1,5 +1,3 @@
-"use client";
-
 import { CheckCircle2 } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { type Product, productColorMap } from "@/lib/products";
