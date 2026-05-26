@@ -45,7 +45,7 @@ export default function Navbar() {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-cyan-400 text-sm font-extrabold text-white">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-violet-600 to-cyan-400 text-sm font-extrabold text-white">
             N
           </div>
           <span>
@@ -131,7 +131,7 @@ export default function Navbar() {
             <Button
               asChild
               size="sm"
-              className="rounded-full bg-gradient-to-r from-violet-600 to-cyan-500 text-white hover:opacity-90"
+              className="rounded-full bg-linear-to-r from-violet-600 to-cyan-500 text-white hover:opacity-90"
             >
               <Link href="/contact">Dùng thử miễn phí</Link>
             </Button>
@@ -201,7 +201,7 @@ export default function Navbar() {
                   <SheetClose asChild>
                     <Button
                       asChild
-                      className="w-full rounded-full bg-gradient-to-r from-violet-600 to-cyan-500 text-white"
+                      className="w-full rounded-full bg-linear-to-r from-violet-600 to-cyan-500 text-white"
                     >
                       <Link href="/contact">Dùng thử miễn phí</Link>
                     </Button>
