@@ -128,8 +128,7 @@ export default function Navbar() {
           <ModeToggle />
         </div>
 
-        <div className="flex items-center justify-end gap-2 md:hidden">
-          <ModeToggle />
+        <div className="flex items-center justify-end md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -186,15 +185,11 @@ export default function Navbar() {
                   </Link>
                 </SheetClose>
 
-                <div className="mt-4 px-4">
-                  <SheetClose asChild>
-                    <Button
-                      asChild
-                      className="w-full rounded-full bg-linear-to-r from-violet-600 to-cyan-500 text-white"
-                    >
-                      <Link href="/contact">Dùng thử miễn phí</Link>
-                    </Button>
-                  </SheetClose>
+                <div className="mt-4 flex items-center justify-between px-4">
+                  <span className="text-sm text-muted-foreground">
+                    Giao diện
+                  </span>
+                  <ModeToggle />
                 </div>
               </div>
             </SheetContent>

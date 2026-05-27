@@ -55,39 +55,40 @@ export function ProductScreenshots({
           </p>
         </BlurFade>
 
-        {/* Thumbnail strip */}
-        <BlurFade delay={0.2} inView>
-          <div className="flex justify-center gap-2.5 overflow-x-auto pb-1">
-            {screenshots.map((s, i) => (
-              <button
-                key={s.src}
-                onClick={() => setActive(i)}
-                className={cn(
-                  "group relative shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200",
-                  active === i
-                    ? "border-violet-500 shadow-md shadow-violet-500/30 opacity-100"
-                    : "border-transparent opacity-50 hover:opacity-80 hover:border-border"
-                )}
-                style={{ width: 140 }}
-                aria-label={s.alt}
-              >
-                <Image
-                  src={s.src}
-                  alt={s.alt}
-                  width={280}
-                  height={175}
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
-                {/* Active dot indicator */}
-                {active === i && (
-                  <span className="absolute bottom-1 left-1/2 h-1 w-4 -translate-x-1/2 rounded-full bg-violet-500" />
-                )}
-              </button>
-            ))}
+        {/* Thumbnail strip — desktop only */}
+        <BlurFade delay={0.2} inView className="hidden sm:block">
+          <div className="overflow-x-auto pb-1">
+            <div className="flex w-fit mx-auto gap-2.5">
+              {screenshots.map((s, i) => (
+                <button
+                  key={s.src}
+                  onClick={() => setActive(i)}
+                  className={cn(
+                    "relative shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200",
+                    active === i
+                      ? "border-violet-500 shadow-md shadow-violet-500/30 opacity-100"
+                      : "border-transparent opacity-50 hover:opacity-80 hover:border-border"
+                  )}
+                  style={{ width: 140 }}
+                  aria-label={s.alt}
+                >
+                  <Image
+                    src={s.src}
+                    alt={s.alt}
+                    width={280}
+                    height={175}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  {active === i && (
+                    <span className="absolute bottom-1 left-1/2 h-1 w-4 -translate-x-1/2 rounded-full bg-violet-500" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </BlurFade>
 
-        {/* Dot pagination for mobile */}
+        {/* Dot pagination — mobile only */}
         <div className="mt-4 flex justify-center gap-1.5 sm:hidden">
           {screenshots.map((_, i) => (
             <button
