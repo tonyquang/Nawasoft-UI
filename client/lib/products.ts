@@ -1,5 +1,7 @@
-import type { LucideIcon } from "lucide-react";
-import { Rocket, Search, Share2, MessageCircle } from "lucide-react";
+import React from "react";
+import { Rocket } from "lucide-react";
+import { FaWordpress, FaFacebook } from "react-icons/fa";
+import { ZaloIcon } from "@/lib/icons";
 
 export interface ProductFeatureGroup {
   groupTitle: string;
@@ -12,7 +14,7 @@ export interface Product {
   name: string;
   tagline: string;
   description: string;
-  icon: LucideIcon;
+  icon: React.ComponentType<{ className?: string }>;
   color: "violet" | "cyan" | "blue" | "indigo";
   link?: string;
   badge?: string;
@@ -76,7 +78,7 @@ export const products: Product[] = [
     tagline: "Sản xuất SEO Content với AI cực nhanh",
     description:
       "Giảm thời gian sản xuất content SEO. Hỗ trợ từ outline, viết bài, tạo hình đến xuất bản. Linh hoạt theo chiến lược nội dung và thương hiệu.",
-    icon: Search,
+    icon: FaWordpress,
     color: "cyan",
     link: "https://seo.nawasoft.vn/",
     badge: "AI",
@@ -118,7 +120,7 @@ export const products: Product[] = [
     tagline: "Tự động hóa Facebook Marketing với AI",
     description:
       "Tự động hóa hoạt động đăng bài và tương tác. Hỗ trợ tìm đúng cộng đồng hoặc nhóm mục tiêu. Giúp mở rộng độ phủ nội dung và tiết kiệm thời gian vận hành.",
-    icon: Share2,
+    icon: FaFacebook,
     color: "blue",
     badge: "Hot",
     problems: [
@@ -158,7 +160,7 @@ export const products: Product[] = [
     tagline: "Tự động hóa Zalo Marketing toàn diện",
     description:
       "Tự động hóa quy trình tiếp cận và chăm sóc khách hàng. Giảm thao tác lặp lại trong nhắn tin, kết bạn và quản lý nhóm.",
-    icon: MessageCircle,
+    icon: ZaloIcon,
     color: "indigo",
     badge: "Hot",
     problems: [
