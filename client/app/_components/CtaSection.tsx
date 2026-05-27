@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 

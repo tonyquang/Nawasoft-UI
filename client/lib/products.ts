@@ -208,8 +208,9 @@ export const productColorMap: Record<
     glow: string;
     hoverText: string;
     hoverBg: string;
-    topBar: string;
     glowColor: string;
+    beamFrom: string;
+    beamTo: string;
   }
 > = {
   violet: {
@@ -219,8 +220,9 @@ export const productColorMap: Record<
     glow: "shadow-violet-500/20",
     hoverText: "group-hover:text-violet-400",
     hoverBg: "group-hover:bg-violet-500/15",
-    topBar: "from-violet-500 to-purple-500",
     glowColor: "oklch(0.49 0.27 293 / 0.12)",
+    beamFrom: "#8b5cf6",
+    beamTo: "#a855f7",
   },
   cyan: {
     text: "text-cyan-400",
@@ -229,8 +231,9 @@ export const productColorMap: Record<
     glow: "shadow-cyan-500/20",
     hoverText: "group-hover:text-cyan-400",
     hoverBg: "group-hover:bg-cyan-500/15",
-    topBar: "from-cyan-400 to-teal-500",
     glowColor: "oklch(0.85 0.18 195 / 0.12)",
+    beamFrom: "#22d3ee",
+    beamTo: "#14b8a6",
   },
   blue: {
     text: "text-blue-400",
@@ -239,8 +242,9 @@ export const productColorMap: Record<
     glow: "shadow-blue-500/20",
     hoverText: "group-hover:text-blue-400",
     hoverBg: "group-hover:bg-blue-500/15",
-    topBar: "from-blue-400 to-blue-600",
     glowColor: "oklch(0.55 0.22 220 / 0.12)",
+    beamFrom: "#60a5fa",
+    beamTo: "#2563eb",
   },
   indigo: {
     text: "text-indigo-400",
@@ -249,7 +253,8 @@ export const productColorMap: Record<
     glow: "shadow-indigo-500/20",
     hoverText: "group-hover:text-indigo-400",
     hoverBg: "group-hover:bg-indigo-500/15",
-    topBar: "from-indigo-400 to-indigo-600",
     glowColor: "oklch(0.52 0.24 264 / 0.12)",
+    beamFrom: "#818cf8",
+    beamTo: "#4f46e5",
   },
 };

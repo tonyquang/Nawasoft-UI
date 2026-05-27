@@ -27,10 +27,6 @@ export function ProductCard({ product }: ProductCardProps) {
         "hover:-translate-y-2 hover:shadow-2xl hover:border-border"
       )}
     >
-      {/* Colored top accent strip */}
-      <div className={cn("h-0.5 w-full bg-linear-to-r", colors.topBar)} />
-
-      {/* Radial glow overlay — pointer-events-none, z-0, fades in on hover */}
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
@@ -38,16 +34,22 @@ export function ProductCard({ product }: ProductCardProps) {
         }}
       />
 
-      {/* BorderBeam — z-0, hidden until hover. Content (z-10) always renders above */}
       <BorderBeam
         size={220}
         duration={10}
-        className="opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        colorFrom={colors.beamFrom}
+        colorTo={colors.beamTo}
+      />
+      <BorderBeam
+        size={220}
+        duration={10}
+        delay={5}
+        reverse
+        colorFrom={colors.beamTo}
+        colorTo={colors.beamFrom}
       />
 
-      {/* ── Card content — always above beam and glow ── */}
-      <div className="relative z-10 flex flex-col flex-1 p-6">
-        {/* Icon + Badge */}
+      <div className="relative z-10 flex flex-1 flex-col p-6">
         <div className="mb-5 flex items-start justify-between">
           <div
             className={cn(
@@ -69,7 +71,6 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Name */}
         <h3
           className={cn(
             "mb-1.5 text-lg font-bold transition-colors duration-300",
@@ -79,12 +80,10 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.name}
         </h3>
 
-        {/* Tagline */}
-        <p className="mb-5 text-sm text-muted-foreground leading-relaxed">
+        <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
           {product.tagline}
         </p>
 
-        {/* Problems list */}
         <ul className="mb-6 flex-1 space-y-2.5">
           {product.problems.map((problem) => (
             <li key={problem} className="flex items-start gap-2.5 text-sm">
@@ -98,7 +97,6 @@ export function ProductCard({ product }: ProductCardProps) {
           ))}
         </ul>
 
-        {/* CTA row */}
         <div className="flex items-center justify-between gap-2">
           <div
             className={cn(
@@ -112,7 +110,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           <RainbowButton
-            className="h-8 rounded-full px-3 text-md "
+            className="h-8 rounded-full px-3 text-md"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();

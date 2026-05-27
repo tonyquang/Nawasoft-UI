@@ -42,9 +42,8 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+      <nav className="container mx-auto grid h-16 grid-cols-3 items-center px-4">
+        <Link href="/" className="flex items-center gap-2 text-lg font-bold">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-violet-600 to-cyan-400 text-sm font-extrabold text-white">
             N
           </div>
@@ -53,8 +52,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop navigation */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden justify-center md:flex">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -125,14 +123,13 @@ export default function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-
-          <div className="ml-2 flex items-center gap-2">
-            <ModeToggle />
-          </div>
         </div>
 
-        {/* Mobile */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="hidden items-center justify-end gap-2 md:flex">
+          <ModeToggle />
+        </div>
+
+        <div className="flex items-center justify-end gap-2 md:hidden">
           <ModeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
