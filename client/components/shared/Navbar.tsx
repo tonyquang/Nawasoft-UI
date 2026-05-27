@@ -128,13 +128,6 @@ export default function Navbar() {
 
           <div className="ml-2 flex items-center gap-2">
             <ModeToggle />
-            <Button
-              asChild
-              size="sm"
-              className="rounded-full bg-linear-to-r from-violet-600 to-cyan-500 text-white hover:opacity-90"
-            >
-              <Link href="/contact">Dùng thử miễn phí</Link>
-            </Button>
           </div>
         </div>
 
