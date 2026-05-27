@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export function CtaSection() {
   return (
@@ -34,13 +35,9 @@ export function CtaSection() {
 
         <BlurFade delay={0.2} inView>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full bg-linear-to-r from-violet-600 to-cyan-500 px-8 text-white hover:opacity-90"
-            >
+            <RainbowButton asChild size="lg">
               <Link href="/contact">Dùng thử miễn phí</Link>
-            </Button>
+            </RainbowButton>
             <Button
               asChild
               variant="outline"
