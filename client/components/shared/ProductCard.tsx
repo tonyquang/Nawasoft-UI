@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 import { type Product, productColorMap } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +14,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const router = useRouter();
   const Icon = product.icon;
   const colors = productColorMap[product.color];
 
@@ -94,15 +99,28 @@ export function ProductCard({ product }: ProductCardProps) {
         </ul>
 
         {/* CTA row */}
-        <div
-          className={cn(
-            "flex items-center gap-1.5 text-sm font-semibold",
-            "text-muted-foreground transition-colors duration-300",
-            colors.hoverText
-          )}
-        >
-          Khám phá {product.name}
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <div className="flex items-center justify-between gap-2">
+          <div
+            className={cn(
+              "flex items-center gap-1.5 text-sm font-semibold",
+              "text-muted-foreground transition-colors duration-300",
+              colors.hoverText
+            )}
+          >
+            Khám phá {product.name}
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </div>
+
+          <RainbowButton
+            className="h-8 rounded-full px-3 text-xs"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              router.push(`/contact?product=${product.slug}`);
+            }}
+          >
+            Liên hệ
+          </RainbowButton>
         </div>
       </div>
     </Link>
