@@ -44,9 +44,8 @@ export default function Navbar() {
     >
       <nav className="container mx-auto grid h-16 grid-cols-3 items-center px-4">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-violet-600 to-cyan-400 text-sm font-extrabold text-white">
-            N
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="NawaSoft" className="h-8 w-auto" />
           <span>
             Nawa<strong>Soft</strong>
           </span>

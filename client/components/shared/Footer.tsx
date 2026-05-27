@@ -14,10 +14,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-violet-600 to-cyan-400 text-sm font-extrabold text-white">
-                N
-              </div>
+            <Link href="/" className="flex items-center gap-2 text-lg font-bold">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="NawaSoft" className="h-8 w-auto" />
               <span>
                 Nawa<strong>Soft</strong>
               </span>
